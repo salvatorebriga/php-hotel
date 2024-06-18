@@ -40,6 +40,8 @@
 
     ];
 
+    $hotels_key = array_keys($hotels[0]);
+
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +60,8 @@
 </head>
 
 <body>
+
+  <!-- 
   <?php foreach ($hotels as $key => $hotel) : ?>
     <div>
       <h2> <?php echo "Hotel numero: " . ($key + 1)  ?> </h2>
@@ -67,7 +71,54 @@
       <?php endforeach ?>
       </ul>
     </div>
-  <?php endforeach ?>
+  <?php endforeach ?> -->
+  
+  <!-- TABELLA -->
+<div class="container py-5 text-center">
+  <h1>LISTA HOTEL</h1>
+  <table class="table">
+
+  <!-- CREA UN ELEMENTO TH PER OGNI CAMPO DI HOTEL_KEYS ESTRAPOLATO DAL PRIMO ELEMENTO DI HOTELS -->
+
+  <thead>
+    <tr>
+      <th>#</th>
+      <?php foreach($hotels_key as $keys) :?>
+        <th> <?php echo $keys; ?> </th>
+      <?php endforeach ?>
+    </tr>
+  </thead>
+
+  <!-- /CREA UN ELEMENTO TH PER OGNI CAMPO DI HOTEL_KEYS ESTRAPOLATO DAL PRIMO ELEMENTO DI HOTELS -->
+
+  <!-- CREA UN ELEMENTO TR PER OGNI ELEMENTO HOTELS (ARRAY INDICIZZATO) -->
+
+  <tbody>
+    <?php foreach($hotels as $key => $hotel) : ?>
+      <tr>
+
+      <!-- CREA UN TH CONTENENTE L'INDICE DI OGNI SINGOLO ELEMENTO DI HOTELS -->
+       
+        <th> <?php echo $key; ?> </th>
+
+        <!-- CREA UN TD IN BASE A QUANTE CHIAVI HA L'INDICE CORRENTE -->
+          <?php foreach($hotel as $hotel_data) : ?>
+
+            <td>
+              <?php echo $hotel_data ?>
+            </td>
+
+          <?php endforeach ?>
+        <!-- /CREA UN TD IN BASE A QUANTE CHIAVI HA L'INDICE CORRENTE -->
+
+
+      <!-- /CREA UN TH CONTENENTE L'INDICE DI OGNI SINGOLO ELEMENTO DI HOTELS -->
+      </tr>
+    <?php endforeach ?>
+  </tbody>
+</table>
+</div>
+
 
   <!--BOOTSTRAP JS-->
   <script 
