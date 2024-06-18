@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    background-color: antiquewhite;
+    height: 100vh;
+    padding: 50px;
+}
+
+.form-container{
+    padding: 20px;
+    display: block;
+}
+
+button{
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    font-weight: 800;
+
+    &:hover{
+        background-color: rgb(43, 43, 247);
+    }
+}
+

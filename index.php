@@ -50,6 +50,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.scss">
   <!--BOOTSTRAP CSS-->
   <link 
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
@@ -60,28 +61,26 @@
 </head>
 
 <body>
-
-  <!-- 
-  <?php foreach ($hotels as $key => $hotel) : ?>
-    <div>
-      <h2> <?php echo "Hotel numero: " . ($key + 1)  ?> </h2>
-      <ul>
-      <?php foreach ($hotel as $key2 => $hote) : ?>
-          <li> <?php echo "$key2 - $hote"?></li>
-      <?php endforeach ?>
-      </ul>
-    </div>
-  <?php endforeach ?> -->
   
   <!-- TABELLA -->
-<div class="container py-5 text-center">
+<div class="container text-center">
   <h1>LISTA HOTEL</h1>
 
   <!-- FORM -->
+  <form action="index.php" method="GET">
+    <div class="form-container">
+      <label for="vote">Voto: </label>
+      <input type="text" name="vote" id="vote">
 
+      <input type="checkbox" name="parking" id="parking">
+      <label for="parking">Pacheggio?</label>
+
+      <button> SUBMIT </button>
+    </div>
+  </form>
   <!-- /FORM -->
 
-  <table class="table">
+<table class="table">
 
   <!-- CREA UN ELEMENTO TH PER OGNI CAMPO DI HOTEL_KEYS ESTRAPOLATO DAL PRIMO ELEMENTO DI HOTELS -->
 
