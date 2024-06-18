@@ -76,6 +76,11 @@
   <!-- TABELLA -->
 <div class="container py-5 text-center">
   <h1>LISTA HOTEL</h1>
+
+  <!-- FORM -->
+
+  <!-- /FORM -->
+
   <table class="table">
 
   <!-- CREA UN ELEMENTO TH PER OGNI CAMPO DI HOTEL_KEYS ESTRAPOLATO DAL PRIMO ELEMENTO DI HOTELS -->
@@ -99,13 +104,21 @@
 
       <!-- CREA UN TH CONTENENTE L'INDICE DI OGNI SINGOLO ELEMENTO DI HOTELS -->
        
-        <th> <?php echo $key; ?> </th>
+        <th> <?php echo ($key + 1); ?> </th>
 
         <!-- CREA UN TD IN BASE A QUANTE CHIAVI HA L'INDICE CORRENTE -->
-          <?php foreach($hotel as $hotel_data) : ?>
+          <?php foreach($hotel as $key2 => $hotel_data) : ?>
 
             <td>
-              <?php echo $hotel_data ?>
+              <?php 
+                if ($key2 == 'parking') {
+                  echo $hotel_data ? 'Yes' : 'No';
+                } elseif ($key2 == 'distance_to_center') {
+                  echo $hotel_data . ' km';
+                } else {
+                  echo $hotel_data;
+                } 
+              ?>
             </td>
 
           <?php endforeach ?>
