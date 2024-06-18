@@ -51,6 +51,17 @@
   <title>PHP Hotels</title>
 </head>
 
-<body></body>
+<body>
+  <?php foreach ($hotels as $key => $hotel) : ?>
+    <div>
+      <h2> <?php echo "Hotel numero: " . ($key + 1)  ?> </h2>
+      <ul>
+      <?php foreach ($hotel as $key2 => $hote) : ?>
+          <li> <?php echo "$key2 - $hote"?></li>
+      <?php endforeach ?>
+      </ul>
+    </div>
+  <?php endforeach ?>
+</body>
 
 </html>
