@@ -70,7 +70,14 @@
   <form action="index.php" method="GET">
     <div class="form-container">
       <label for="vote">Voto: </label>
-      <input type="text" name="vote" id="vote">
+      <select name="vote" id="vote">
+        <option value="">-- seleziona --</option>
+        <option value="1">1 Stella</option>
+        <option value="2">2 Stelle</option>
+        <option value="3">3 Stelle</option>
+        <option value="4">4 Stelle</option>
+        <option value="5">5 Stelle</option>
+      </select>
 
       <input type="checkbox" name="parking" id="parking">
       <label for="parking">Pacheggio?</label>
